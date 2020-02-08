@@ -43,7 +43,7 @@ python项目需要的依赖都放在requirements.txt的文件中，
 5.最近alex买了Tesla Model S，通过转账的形式，并且支付了5%的手续费，tesla的价格为96万。账户文件为json，请用程序实现该转账行为
 需求如下：
 ○目录结构为
-。
+
 ├─account
 │      alex.json
 │      alex_temp.json
@@ -55,7 +55,7 @@ python项目需要的依赖都放在requirements.txt的文件中，
         
 6.对上题增加一个需求：提现。
 目录结构如下：
-。
+
 ├─account
 │      alex.json
 │      alex_temp.json
@@ -77,7 +77,7 @@ python项目需要的依赖都放在requirements.txt的文件中，
 7.尝试把上一章的验证用户登录的装饰器添加到提现和转账功能上
 
 8.对第6题的用户转账、登录和提现操作均记录日志，日志文件位置如下：
-。
+
 │  main.py
 │  readme.MD
 │
