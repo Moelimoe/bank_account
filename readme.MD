@@ -1,4 +1,4 @@
-# 练习题（项目练习，必做）
+# Bank account
 1.导入模块的方式有哪几种，官方不推荐哪种？
 答：一个.py文件就可以作为一个模块
 import xxx、
@@ -44,26 +44,29 @@ python项目需要的依赖都放在requirements.txt的文件中，
 需求如下：
 ○目录结构为
 。
-|———————account
-|       |————alex.json
-|       |____tesla_company.json
-|
-|_______bin
-        |____start.py
+├─account
+│      alex.json
+│      alex_temp.json
+│      tesla_company.json
+│      tesla_company_temp.json
+│
+└─bin
+       start.py
         
 6.对上题增加一个需求：提现。
 目录结构如下：
 。
-|———————account
-|       |————alex.json
-|       |____alex_temp.json
-|       |____tesla_company.json
-|       |____tesla_company_temp.json
-|
-|_______bin
-|       |____start.py
-|_______core
-        |____withdraw.py
+├─account
+│      alex.json
+│      alex_temp.json
+│      tesla_company.json
+│      tesla_company_temp.json
+│
+├─bin
+│      start.py
+│
+└─core
+       withdraw.py
 当执行start.py时，出现交互窗口：
 ----------- ICBC Bank -----------
 1.账户提现
@@ -75,16 +78,23 @@ python项目需要的依赖都放在requirements.txt的文件中，
 
 8.对第6题的用户转账、登录和提现操作均记录日志，日志文件位置如下：
 。
-|———————account
-|       |————alex.json
-|       |____tesla_company.json
-|
-|_______bin
-|       |____start.py
-|_______core
-        |____withdraw.py
-|_______logs
-        |____bank.log
+│  main.py
+│  readme.MD
+│
+├─account
+│      alex.json
+│      alex_temp.json
+│      tesla_company.json
+│      tesla_company_temp.json
+│
+├─bin
+│      start.py
+│
+├─core
+│      withdraw.py
+│
+└─logs
+        bank.log
 日志格式如下：
 20190502  18:34:23   alex   transfer to [tesla_company] with amount RMB95  
 20190812  14:20:17   alex   withdraw cash RMB800, interest is RMB40  
