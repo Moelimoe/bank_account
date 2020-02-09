@@ -1,30 +1,36 @@
 # Bank account
-1.导入模块的方式有哪几种，官方不推荐哪种？
-答：一个.py文件就可以作为一个模块
+一、.导入模块的方式有哪几种，官方不推荐哪种？
+
+```答：一个.py文件就可以作为一个模块```
+```py
 import xxx、
 from xxx import xxx
 from xxx import *（从某模块直接导入所有py文件，但不推荐，因为可能会出现py文件与变量或其他模块的py文件重名的现象）
 以命名a导入b模块:import b as a
-
-导入父目录同级兄弟目录的子py文件(如advancedFunction下的learning.py模块)：
-1.使用sys.path.append("爷绝对目录")然后from 父目录的兄弟目录 import 其下的py文件：
-例如 在practice_proj->buytesla->core下的withdraw要导入practice_proj->buytesla->bin下的test.py：
+```
+**导入父目录同级兄弟目录的子py文件(如advancedFunction下的learning.py模块)：**
+```例如1.使用sys.path.append("爷绝对目录")然后from 父目录的兄弟目录 import 其下的py文件：
+在practice_proj->buytesla->core下的withdraw要导入practice_proj->buytesla->bin下的test.py：
 import sys
 sys.path.append('E:/bilibili\practice_proj/buytesla')
 from bin import test
-**此方法不推荐，因为如果设备更换则代码需改变，所以代码需更改一下:**
+```
+**上面的方法不推荐，因为如果设备更换则代码需改变，则每一个地方的导入代码都要更改:**
+```
 import sys, os
 base_name = os.path.dirname(os.path.dirname(__file__))
 sys.path.append(base_name)
 from bin import test
+```
 **然而，以上方法依然很繁琐，故官方不推荐这么做**，于是有如下方法**跨目录导入模块**
+```
 注意此方法要求运行路径从项目顶级目录开始运行（如下例子是在import_test/start.py运行）：
-例：import_test文件夹下：import_module目录下imp.py要导入import_module的兄弟目录brother_dir下的mod.py
+例如：import_test文件夹下：import_module目录下imp.py要导入import_module的兄弟目录brother_dir下的mod.py
 1.直接在imp.py写入 from brother_dir import mod
 2.在import_test(imp.py的父目录的父目录)下建立一个start.py，在start.py写入 from import_module import imp
-
-python项目需要的依赖都放在requirements.txt的文件中，
-生成方法：pip freeze > requirement (freeze如何指定安装包？？)将安装包包含其版本都写入到requirement下
+```
+**python项目需要的依赖都放在requirements.txt的文件中，怎么生成依赖的requirements文件：**
+```pip freeze > requirement (freeze如何指定安装包？？)将安装包包含其版本都写入到requirement下```
 
 2.如何让你的模块可以被系统任何一个py文件导入
 将py文件移动到python目录下第三方模块(site-package)的位置下，不推荐放到内置模块位置下
