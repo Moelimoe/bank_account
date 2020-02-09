@@ -30,18 +30,22 @@ from bin import test
 2.在import_test(imp.py的父目录的父目录)下建立一个start.py，在start.py写入 from import_module import imp
 ```
 **python项目需要的依赖都放在requirements.txt的文件中，怎么生成依赖的requirements文件：**
-```pip freeze > requirement (freeze如何指定安装包？？)将安装包包含其版本都写入到requirement下```
+```
+pip freeze > requirement (freeze如何指定安装包？？)将安装包包含其版本都写入到requirement下
+```
 
 ## 二、如何让你的模块可以被系统任何一个py文件导入?
-将py文件移动到python目录下第三方模块(site-package)的位置下，不推荐放到内置模块位置下
+将py文件移动到python目录下第三方模块(site-package)的位置下，但是不推荐放到内置模块位置下
 
 ## 三、写一个用户登录验证程序，文件account.json，内容如下：
+```
 {'expire_date': "2021-01-01", "id":1234, "status":0, "pay_day": 22, "password": "abc"}
 ·根据用户输入的用户名&密码，找到对应的json文件，把数据加载出来验证
 ·用户名为json文件名，密码为password
 ·判断是否过期，与expire_date进行对比
 ·登录成功后，打印“登陆成功”，三次登录失败，status变为1，并锁定账号
 (作业参照login.py)
+```
 
 ## 四、把第3题用户密码进行hashlib加密处理。即：json文件里的密码保存为md5的值，然后用md5的值验进行验证账号信息是否正确
 (作业参照login_hash.py)
